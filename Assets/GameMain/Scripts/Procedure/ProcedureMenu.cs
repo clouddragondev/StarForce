@@ -14,7 +14,7 @@ namespace StarForce
     public class ProcedureMenu : ProcedureBase
     {
         private bool m_StartGame = false;
-        private MenuForm m_MenuForm = null;
+        private LuaForm m_MenuForm = null;
 
         public override bool UseNativeDialog
         {
@@ -72,7 +72,7 @@ namespace StarForce
                 return;
             }
 
-            m_MenuForm = (MenuForm)ne.UIForm.Logic;
+            m_MenuForm = (LuaForm)ne.UIForm.Logic;
         }
     }
 }

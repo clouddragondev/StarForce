@@ -1,0 +1,5 @@
+for i = 1, 10000 do
+	print("this is lua print...")
+end
+
+print("finish...")

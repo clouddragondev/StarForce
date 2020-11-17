@@ -6,15 +6,15 @@
       <Resource Name="DataTables" FileSystem="GameData" LoadType="0" Packed="True" ResourceGroups="Base" />
       <Resource Name="Entities" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Fonts" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
-      <Resource Name="Localization/Dictionaries" Variant="en-us" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
-      <Resource Name="Localization/Dictionaries" Variant="ko-kr" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
-      <Resource Name="Localization/Dictionaries" Variant="zh-cn" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
-      <Resource Name="Localization/Dictionaries" Variant="zh-tw" FileSystem="UI" LoadType="0" Packed="True" ResourceGroups="Base" />
+      <Resource Name="Localization/ChineseSimplified/Dictionaries/Default" LoadType="0" Packed="False" />
+      <Resource Name="Localization/ChineseTraditional/Dictionaries/Default" LoadType="0" Packed="False" />
+      <Resource Name="Localization/English/Dictionaries/Default" LoadType="0" Packed="False" />
+      <Resource Name="Localization/Korean/Dictionaries/Default" LoadType="0" Packed="False" />
       <Resource Name="Materials" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Meshes" FileSystem="Resources" LoadType="0" Packed="True" />
-      <Resource Name="Music/About" FileSystem="Resources" LoadType="0" Packed="True" ResourceGroups="Music" />
-      <Resource Name="Music/Background" FileSystem="Resources" LoadType="0" Packed="True" ResourceGroups="Music" />
-      <Resource Name="Music/Menu" FileSystem="Resources" LoadType="0" Packed="True" ResourceGroups="Music" />
+      <Resource Name="Music/music_about" LoadType="0" Packed="False" />
+      <Resource Name="Music/music_background" LoadType="0" Packed="False" />
+      <Resource Name="Music/music_menu" LoadType="0" Packed="False" />
       <Resource Name="Scenes" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Sounds" FileSystem="Resources" LoadType="0" Packed="True" />
       <Resource Name="Textures" FileSystem="Resources" LoadType="0" Packed="True" />
@@ -28,17 +28,17 @@
       <Asset Guid="0179316b5fc7c2946a67c5877c02fc30" ResourceName="UI/UISprites/Common" />
       <Asset Guid="04d7dde7615d71b4db1a0c8d67a62e95" ResourceName="UI/UIForms" />
       <Asset Guid="04dbc0581071c254ea6564b2ff06ff9b" ResourceName="Textures" />
-      <Asset Guid="093f8873cfe371d41b854ed9fb6bff69" ResourceName="Music/About" />
+      <Asset Guid="093f8873cfe371d41b854ed9fb6bff69" ResourceName="Music/music_about" />
       <Asset Guid="0963e6c65b2b1f74d9f455e21901e2dc" ResourceName="Textures" />
       <Asset Guid="0992f89f84d762f478fd32f8225168b0" ResourceName="Entities" />
       <Asset Guid="09966b19e546cc94aa84d0743cb2a83d" ResourceName="UI/UIForms" />
       <Asset Guid="0a65a68c01a76ea4b8b574827a6467aa" ResourceName="UI/UISprites/Common" />
       <Asset Guid="0ed73dc47f4cb38489020d05e9f02c99" ResourceName="Materials" />
       <Asset Guid="0f995b3145e0e7247a42da6cef1dbf23" ResourceName="Materials" />
-      <Asset Guid="1053b0070685be347ab58587156842dc" ResourceName="Localization/Dictionaries" ResourceVariant="zh-tw" />
+      <Asset Guid="1053b0070685be347ab58587156842dc" ResourceName="Localization/ChineseTraditional/Dictionaries/Default" />
       <Asset Guid="11e27c26ac87b40f0a62ec40d7261989" ResourceName="Entities" />
       <Asset Guid="1478894bc9a1ed241b05b0862a7b8bce" ResourceName="Textures" />
-      <Asset Guid="14869ac0d4433f04db1704e39d03412e" ResourceName="Localization/Dictionaries" ResourceVariant="en-us" />
+      <Asset Guid="14869ac0d4433f04db1704e39d03412e" ResourceName="Localization/English/Dictionaries/Default" />
       <Asset Guid="156d241f796508c4da4fc354a7fbf5a8" ResourceName="UI/UISprites/Common" />
       <Asset Guid="160925a6fe2664f2a978566b819f0af0" ResourceName="Entities" />
       <Asset Guid="185f97f18bd603a478461ce9c08bd039" ResourceName="Materials" />
@@ -72,9 +72,9 @@
       <Asset Guid="56b8df63bbad60749a69e38bc687fadf" ResourceName="UI/UISprites/Common" />
       <Asset Guid="578af1667322bab45b652b79a40bb4fb" ResourceName="Materials" />
       <Asset Guid="583ff7026dac91849b7c7b2468ba456b" ResourceName="Materials" />
-      <Asset Guid="5dcd89912e222bf4c87f76db4044bc5e" ResourceName="Localization/Dictionaries" ResourceVariant="ko-kr" />
+      <Asset Guid="5dcd89912e222bf4c87f76db4044bc5e" ResourceName="Localization/Korean/Dictionaries/Default" />
       <Asset Guid="62af9e5c8f39cfa49af9e10ccf42f1da" ResourceName="UI/UISprites/Common" />
-      <Asset Guid="638ff8ae4a0d15047839cd265d3bc296" ResourceName="Music/Background" />
+      <Asset Guid="638ff8ae4a0d15047839cd265d3bc296" ResourceName="Music/music_background" />
       <Asset Guid="63fe6ff9ab9e1433f8db4ebd940f2442" ResourceName="Materials" />
       <Asset Guid="64f3bb52c6a54854688fcc656af2b1c9" ResourceName="DataTables" />
       <Asset Guid="6cbc2c323b77f804fb958fa4eca33998" ResourceName="UI/UISprites/Common" />
@@ -105,7 +105,7 @@
       <Asset Guid="97d117308cf86924289e81e7e71dd5dd" ResourceName="DataTables" />
       <Asset Guid="9afa958d6d8235941b9badb42aae4370" ResourceName="Meshes" />
       <Asset Guid="9b433f0bb7fef6f4085c316a0d88c307" ResourceName="DataTables" />
-      <Asset Guid="9be2e1e45f4edd74c8764538ad306b78" ResourceName="Localization/Dictionaries" ResourceVariant="zh-cn" />
+      <Asset Guid="9be2e1e45f4edd74c8764538ad306b78" ResourceName="Localization/ChineseSimplified/Dictionaries/Default" />
       <Asset Guid="9c3961f379234354e813d7b38146424d" ResourceName="DataTables" />
       <Asset Guid="9c3faac13c8ced84a9f3018303b7bb98" ResourceName="DataTables" />
       <Asset Guid="9ddab293e2a8af3499dac05f5fd6169c" ResourceName="Meshes" />
@@ -133,7 +133,7 @@
       <Asset Guid="c547624e174de984882f0a14b4bb32e1" ResourceName="Materials" />
       <Asset Guid="c58c9afddbd36d14d837fa218d772996" ResourceName="Materials" />
       <Asset Guid="c7d1e11dd37634b48a9dd4012b8e4306" ResourceName="UI/UISounds" />
-      <Asset Guid="caa829ab2ffc71340a69253afdf58365" ResourceName="Music/Menu" />
+      <Asset Guid="caa829ab2ffc71340a69253afdf58365" ResourceName="Music/music_menu" />
       <Asset Guid="cadd0764941c8b646ae79b51d0ea8285" ResourceName="UI/UISprites/Common" />
       <Asset Guid="cfe53cf384344bd47a8680f8c5f97a7b" ResourceName="DataTables" />
       <Asset Guid="d9808401c68af274a8edfbed3d1b53c7" ResourceName="Meshes" />

@@ -26,10 +26,17 @@ namespace StarForce
             private set;
         }
 
+        public static LuaComponent Lua
+        {
+            get;
+            private set;
+        }
+
         private static void InitCustomComponents()
         {
             BuiltinData = UnityGameFramework.Runtime.GameEntry.GetComponent<BuiltinDataComponent>();
             HPBar = UnityGameFramework.Runtime.GameEntry.GetComponent<HPBarComponent>();
+            Lua = UnityGameFramework.Runtime.GameEntry.GetComponent<LuaComponent>();
         }
     }
 }

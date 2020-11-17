@@ -8,9 +8,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-
+using XLua;
 namespace StarForce
 {
+    public delegate void CommonButtonClick();
+
+    [LuaCallCSharp]
     public class CommonButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
     {
         private const float FadeTime = 0.3f;
@@ -21,9 +24,10 @@ namespace StarForce
         private UnityEvent m_OnHover = null;
 
         [SerializeField]
-        private UnityEvent m_OnClick = null;
+        public UnityEvent m_OnClick = null;
 
         private CanvasGroup m_CanvasGroup = null;
+
 
         private void Awake()
         {
@@ -67,6 +71,7 @@ namespace StarForce
 
             m_CanvasGroup.alpha = OnClickAlpha;
             m_OnClick.Invoke();
+
         }
 
         public void OnPointerUp(PointerEventData eventData)

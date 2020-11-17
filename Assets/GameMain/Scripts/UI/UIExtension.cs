@@ -115,7 +115,7 @@ namespace StarForce
             return (UGuiForm)uiForm.Logic;
         }
 
-        public static void CloseUIForm(this UIComponent uiComponent, UGuiForm uiForm)
+        public static void CloseUIForm(this UIComponent uiComponent, UIFormLogic uiForm)
         {
             uiComponent.CloseUIForm(uiForm.UIForm);
         }
