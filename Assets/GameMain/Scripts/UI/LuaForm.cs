@@ -13,10 +13,11 @@ namespace StarForce
     public delegate void TowFNumbers(float v1, float v2);
     [CSharpCallLua]
     public delegate void DOnClose(bool isShutdown, object userData);
-
+    [CSharpCallLua]
+    public delegate void DOnInit(ProcedureMenu procedureMenu);
     public class LuaForm : UIFormLogic
     {
-        private Action LuaOnInit;
+        private DOnInit LuaOnInit;
         private Action LuaOnRecycle;
         private Action<object> LuaOnOpen;
         private Action LuaOnClose;
@@ -145,7 +146,7 @@ namespace StarForce
             luaInit();
             if(LuaOnInit != null)
             {
-                LuaOnInit();
+                LuaOnInit((ProcedureMenu)userData);
             }
             m_CachedCanvas = gameObject.GetOrAddComponent<Canvas>();
             m_CachedCanvas.overrideSorting = true;

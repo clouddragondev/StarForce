@@ -24,6 +24,7 @@ namespace StarForce
             this.luaEnv = new LuaEnv();
             // 新增自定义装载
             this.luaEnv.AddLoader(CustomLoader);
+            this.luaEnv.DoString("require('main')");
             // this.luaEnv.DoString("package.path = {0}");
             // 加载依赖的动态库
             // this.luaEnv.AddBuildin("luasocket", null);

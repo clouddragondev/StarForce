@@ -8,9 +8,10 @@
 using GameFramework.Event;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
-
+using XLua;
 namespace StarForce
 {
+    [LuaCallCSharp]
     public class ProcedureMenu : ProcedureBase
     {
         private bool m_StartGame = false;

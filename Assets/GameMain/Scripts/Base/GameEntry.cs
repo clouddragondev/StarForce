@@ -6,12 +6,13 @@
 //------------------------------------------------------------
 
 using UnityEngine;
-
+using XLua;
 namespace StarForce
 {
     /// <summary>
     /// 游戏入口。
     /// </summary>
+    [LuaCallCSharp]
     public partial class GameEntry : MonoBehaviour
     {
         private void Start()
