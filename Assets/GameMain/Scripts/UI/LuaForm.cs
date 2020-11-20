@@ -79,27 +79,31 @@ namespace StarForce
             meta.Dispose();
 
             scriptEnv.Set("self", this);
-            string[] nluas = this.transform.name.Split('(');
-            string state = nluas[0];
+            // 防止误操作 改良一下做法
+            string gameObjectName = this.transform.name;
+            if(gameObjectName.Contains("(Clone)"))
+            {
+                gameObjectName = gameObjectName.Split(new string[] { "(Clone)" }, StringSplitOptions.RemoveEmptyEntries)[0];
+            }
             //string contents = "require(\"" + nluas[0] + "\")";
-            byte[] contents = File.ReadAllBytes(Application.dataPath + "/LuaScripts/" + state + ".lua");
-            luaEnv.DoString(contents, state, scriptEnv);
+            byte[] contents = File.ReadAllBytes(Application.dataPath + "/LuaScripts/" + gameObjectName + ".lua");
+            luaEnv.DoString(contents, gameObjectName, scriptEnv);
+            Debug.Log("gameObjectName : "+ gameObjectName);
+            LuaOnInit = scriptEnv.GetInPath<DOnInit>(gameObjectName+".OnInit");
+            LuaOnRecycle = scriptEnv.GetInPath<Action>(gameObjectName + ".OnRecycle");
+            LuaOnOpen = scriptEnv.GetInPath<Action<object>>(gameObjectName + ".OnOpen");
 
-            scriptEnv.Get("OnInit", out LuaOnInit);
-            scriptEnv.Get("OnRecycle", out LuaOnRecycle);
-            scriptEnv.Get("OnOpen", out LuaOnOpen);
+            dOnClose = scriptEnv.GetInPath<DOnClose>(gameObjectName + ".OnClose");
+            LuaOnPause = scriptEnv.GetInPath<Action>(gameObjectName + ".OnPause");
+            LuaOnResume = scriptEnv.GetInPath<Action>(gameObjectName + ".OnResume");
 
-            scriptEnv.Get("OnClose", out dOnClose);
-            scriptEnv.Get("OnPause", out LuaOnPause);
-            scriptEnv.Get("OnResume", out LuaOnResume);
+            LuaOnCover = scriptEnv.GetInPath<Action>(gameObjectName + ".OnCover");
+            LuaOnReveal = scriptEnv.GetInPath<Action>(gameObjectName + ".OnReveal");
+            LuaOnRefocus = scriptEnv.GetInPath<Action<object>>(gameObjectName + ".OnRefocus");
 
-            scriptEnv.Get("OnCover", out LuaOnCover);
-            scriptEnv.Get("OnReveal", out LuaOnReveal);
-            scriptEnv.Get("OnRefocus", out LuaOnRefocus);
-
-            scriptEnv.Get("OnUpdate", out towNumbers);
-            scriptEnv.Get("OnDepthChanged", out LuaOnDepthChanged);
-            scriptEnv.Get("InternalSetVisible", out LuaInternalSetVisible);
+            towNumbers = scriptEnv.GetInPath<TowFNumbers>(gameObjectName + ".OnUpdate");
+            LuaOnDepthChanged = scriptEnv.GetInPath<Action>(gameObjectName + ".OnDepthChanged");
+            LuaInternalSetVisible = scriptEnv.GetInPath<Action>(gameObjectName + ".InternalSetVisible");
         }
 
         public void Close()

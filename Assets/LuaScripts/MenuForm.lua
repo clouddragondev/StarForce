@@ -7,7 +7,9 @@ local procedure = nil
 local SETTING_INDEX = 101
 local AHOUT_INDEX = 102
 
-function OnRecycle()
+MenuForm = {}
+
+function MenuForm.OnRecycle()
 	print("mmmm....OnRecycle...")
 end
 
@@ -44,7 +46,7 @@ local function asy_msg(index)
 	end
 end
 
-function OnInit(procedureMenu)
+function MenuForm.OnInit(procedureMenu)
 	if procedureMenu == nil then 
 		print("mmmm....OnInit...failed ")
 		return 
@@ -80,11 +82,11 @@ function OnInit(procedureMenu)
 
 end
 
-function OnOpen(vv)
+function MenuForm.OnOpen(vv)
 	print("mmmm....OnOpen...")
 end
 
-function OnClose(bvalue)
+function MenuForm.OnClose(bvalue)
 	local v = "yes"
 	if bvalue then 
 		v = "no"
@@ -92,35 +94,35 @@ function OnClose(bvalue)
 	print("mmmm....OnClose... :  "..v.." ")
 end
 
-function OnPause()
+function MenuForm.OnPause()
 	print("mmmm....OnPause...")
 end
 
-function OnResume()
+function MenuForm.OnResume()
 	print("mmmm....OnResume...")
 end
 
-function OnCover()
+function MenuForm.OnCover()
 	print("mmmm....OnCover...")
 end
 
-function OnReveal()
+function MenuForm.OnReveal()
 	print("mmmm....OnReveal...")
 end
 
-function OnRefocus(usedata)
+function MenuForm.OnRefocus(usedata)
 	print("mmmm....OnRefocus...")
 end
 
-function OnUpdate(time, values)
+function MenuForm.OnUpdate(time, values)
 	-- print("mmmm....OnUpdate...:"..time.." vv: "..values)
 end
 
-function OnDepthChanged(v1, v2)
+function MenuForm.OnDepthChanged(v1, v2)
 	print("mmmm....OnDepthChanged... : ")
 end
 
-function InternalSetVisible()
+function MenuForm.InternalSetVisible()
 	print("mmmm....InternalSetVisible...")
 end
 
